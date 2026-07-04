@@ -95,7 +95,7 @@ def main():
     parser.add_argument("--output", required=True, help="Merged subscription yaml path")
     parser.add_argument(
         "--rules-base-url",
-        default="https://083105.xyz/rules/loyalsoldier",
+        default="https://rules.example.com/loyalsoldier",
         help="Base URL for self-hosted Loyalsoldier rule files",
     )
     args = parser.parse_args()
@@ -104,4 +104,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
