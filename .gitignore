@@ -2,4 +2,4 @@ dist/subscription-merged.yaml
 public/rules/loyalsoldier/
 !public/rules/loyalsoldier/.gitkeep
 __pycache__/
-
+rules/custom-direct.private.txt
