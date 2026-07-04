@@ -1,4 +1,4 @@
-# JohnsonJY S2 Whitelist Rules
+# Clash 白名单规则（自用）
 
 这是一套给 `Clash Verge / Mihomo / FlClash` 使用的白名单模式规则仓库。
 
@@ -98,4 +98,3 @@ python .\scripts\merge_subscription.py `
 ## 上游致谢
 
 - Loyalsoldier: [clash-rules](https://github.com/Loyalsoldier/clash-rules)
-
