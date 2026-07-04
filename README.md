@@ -12,7 +12,9 @@
 ## 项目结构
 
 - `rules/custom-direct.txt`
-  - 你自己维护的直连规则
+  - 公开安全版示例直连规则
+- `rules/custom-direct.private.txt`
+  - 你自己本地维护的私有直连规则，默认不提交
 - `dist/whitelist-overlay.yaml`
   - 生成后的 Mihomo 覆写片段
 - `example/base-subscription.yaml`
@@ -49,6 +51,7 @@
 直接编辑：
 
 - `rules/custom-direct.txt`
+- 需要私有规则时，额外创建 `rules/custom-direct.private.txt`
 
 然后执行：
 
@@ -62,7 +65,7 @@ python .\scripts\build_overlay.py
 python .\scripts\merge_subscription.py `
   --base .\example\base-subscription.yaml `
   --output .\dist\subscription-merged.yaml `
-  --rules-base-url https://083105.xyz/rules/loyalsoldier
+  --rules-base-url https://rules.example.com/loyalsoldier
 ```
 
 ### 3. 同步 Loyalsoldier 白名单规则集
@@ -109,6 +112,13 @@ python .\scripts\merge_subscription.py `
 - 实际节点地址
 - UUID / 密码 / Reality 公钥
 - 真实订阅链接中的敏感字段
+- 个人私用域名、内网主机地址、个人服务偏好清单
+
+推荐做法：
+
+- 把真实私有规则放到 `rules/custom-direct.private.txt`
+- 把真实规则源地址在本地或 VPS 环境中单独维护
+- 公共仓库只保留结构、脚本和公开安全版示例
 
 真实节点配置与最终订阅发布仍应放在你自己的服务器或私有配置中维护。
 
