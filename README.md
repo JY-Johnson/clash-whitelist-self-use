@@ -9,18 +9,24 @@
 - 不在仓库中保存真实节点信息
 - 规则来源清晰，便于长期维护
 
-## 仓库内容
+## 项目结构
 
 - `rules/custom-direct.txt`
-  - 自定义直连规则，按业务分组维护
+  - 你自己维护的直连规则
 - `dist/whitelist-overlay.yaml`
-  - 可直接参考的 Mihomo 覆写片段
+  - 生成后的 Mihomo 覆写片段
+- `example/base-subscription.yaml`
+  - 合并脚本示例输入
 - `scripts/build_overlay.py`
-  - 根据 `custom-direct.txt` 生成覆写片段
+  - 从自定义规则生成覆写文件
 - `scripts/merge_subscription.py`
-  - 将白名单规则合并进现有订阅 YAML
+  - 把白名单逻辑合并到现有订阅
 - `scripts/sync_loyalsoldier.ps1`
-  - 下载 Loyalsoldier 白名单模式所需规则集
+  - 同步上游规则集
+- `THIRD_PARTY.md`
+  - 第三方来源说明
+- `CHANGELOG.md`
+  - 变更记录
 
 ## 当前白名单策略
 
@@ -64,6 +70,17 @@ python .\scripts\merge_subscription.py `
 ```powershell
 .\scripts\sync_loyalsoldier.ps1 -OutputDir .\public\rules\loyalsoldier
 ```
+
+## 还建议补什么
+
+如果后面要继续长期维护，这几个方向最值得继续做：
+
+- 增加一个自动校验工作流，检查生成后的 YAML 是否可被 Mihomo 正常读取
+- 把“发布到你自己的 VPS”整理成单独脚本
+- 把自定义规则按主题继续拆分，例如：
+  - `ai-services`
+  - `china-sites`
+  - `local-processes`
 
 ## 已采用的上游规则集
 
