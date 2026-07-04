@@ -1,67 +1,22 @@
-# 自己的订阅/伪装域名
-DOMAIN-SUFFIX,083105.xyz,DIRECT
+# Public-safe example rules only.
+# Put personal domains, local IPs, private services, and device-specific process rules
+# into rules/custom-direct.private.txt (ignored by git).
 
-# 本地设备与国内 AI/API 服务
-IP-CIDR,192.168.0.10/32,DIRECT
-DOMAIN,openspeech.bytedance.com,DIRECT
-DOMAIN,ark.cn-beijing.volces.com,DIRECT
-DOMAIN,api.shandianshuo.cn,DIRECT
-DOMAIN,api.zhongruanapi.dpdns.org,DIRECT
-DOMAIN-SUFFIX,deepseek.com,DIRECT
-DOMAIN-SUFFIX,volces.com,DIRECT
-DOMAIN-SUFFIX,aliyuncs.com,DIRECT
-DOMAIN-SUFFIX,qianwen.aliyun.com,DIRECT
-DOMAIN-SUFFIX,tongyi.aliyun.com,DIRECT
-DOMAIN-SUFFIX,dashscope.aliyuncs.com,DIRECT
+# Your own rule host or subscription domain
+DOMAIN-SUFFIX,your-domain.example,DIRECT
 
-# 公益/订阅/共享服务
-DOMAIN-SUFFIX,gy.zenscaleai.com,DIRECT
-DOMAIN-SUFFIX,hongshi1024-l-api.hf.space,DIRECT
-DOMAIN-SUFFIX,x666.me,DIRECT
-DOMAIN-SUFFIX,4router.net,DIRECT
-DOMAIN-SUFFIX,hezu.ink,DIRECT
-DOMAIN-SUFFIX,krill-ai.com,DIRECT
-DOMAIN-SUFFIX,cdn-krill-ai.com,DIRECT
-DOMAIN,new.sharedchat.cc,DIRECT
-DOMAIN,mxlsub.me,DIRECT
-DOMAIN,share.lzf.email,DIRECT
+# Optional local/private examples
+IP-CIDR,192.168.0.0/16,DIRECT
+DOMAIN-SUFFIX,lan,DIRECT
+DOMAIN-SUFFIX,local,DIRECT
 
-# 国内常用站点/工具
-DOMAIN-SUFFIX,cn,DIRECT
-DOMAIN-SUFFIX,jianguoyun.com,DIRECT
-DOMAIN-SUFFIX,temu.com,DIRECT
-DOMAIN-SUFFIX,test.dnngo.net,DIRECT
-DOMAIN-SUFFIX,tinypng.com,DIRECT
-DOMAIN-SUFFIX,bing.com,DIRECT
-DOMAIN-SUFFIX,bing.net,DIRECT
+# Optional self-hosted services
+DOMAIN-SUFFIX,notes.example,DIRECT
+DOMAIN-SUFFIX,api.example,DIRECT
 
-# 本机软件进程
+# Common local tooling examples
 PROCESS-NAME,adb.exe,DIRECT
-PROCESS-NAME,openless.exe,DIRECT
-PROCESS-NAME,pcsuite.exe,DIRECT
-PROCESS-NAME,pcsuite_.exe,DIRECT
-PROCESS-NAME,ConnectStatus.exe,DIRECT
-PROCESS-NAME,pc_toast.exe,DIRECT
-PROCESS-NAME,phoneCall.exe,DIRECT
-PROCESS-NAME,PCMode.exe,DIRECT
-PROCESS-NAME,vdfs.exe,DIRECT
-PROCESS-NAME,vdfsServer.exe,DIRECT
-PROCESS-NAME,VivoExtScreen.exe,DIRECT
-PROCESS-NAME,vivoScreen.exe,DIRECT
-PROCESS-NAME,vivoScreenLauncher.exe,DIRECT
-PROCESS-NAME,vScreenCapture.exe,DIRECT
-PROCESS-NAME,vivoPreDetector.exe,DIRECT
-PROCESS-NAME,vivoDumpReport.exe,DIRECT
-PROCESS-NAME,vivo_file_drag.exe,DIRECT
-PROCESS-NAME,vivorelay.exe,DIRECT
-PROCESS-NAME,vivocontrol.exe,DIRECT
-PROCESS-NAME,vivo_remote_service.exe,DIRECT
-PROCESS-NAME,vivo_remote_watch.exe,DIRECT
-PROCESS-NAME,vivoesService.exe,DIRECT
-PROCESS-NAME,vivoesService_x64.exe,DIRECT
-PROCESS-NAME,vivoSyncService.exe,DIRECT
-PROCESS-NAME,vivoBackup.exe,DIRECT
+PROCESS-NAME,ssh.exe,DIRECT
 
-# 国内常见服务补充
+# Common mainland traffic shortcut
 GEOSITE,CN,DIRECT
-
