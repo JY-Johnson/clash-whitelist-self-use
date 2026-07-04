@@ -98,3 +98,14 @@ python .\scripts\merge_subscription.py `
 ## 上游致谢
 
 - Loyalsoldier: [clash-rules](https://github.com/Loyalsoldier/clash-rules)
+
+## 许可证与来源说明
+
+- 本仓库中的自编脚本、说明文档与自定义规则整理方式，采用 [MIT License](./LICENSE)。
+- 本仓库默认不直接提交上游规则文件内容。
+- `scripts/sync_loyalsoldier.ps1` 下载的上游规则文件，仍然遵循其原始项目许可证与发布条款。
+- 如果你将下载后的上游规则文件继续分发、镜像或修改，请自行遵循对应上游项目的许可证要求。
+
+更详细的第三方来源说明见：
+
+- [THIRD_PARTY.md](./THIRD_PARTY.md)
