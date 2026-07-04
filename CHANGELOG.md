@@ -19,4 +19,4 @@ All notable changes to this repository will be documented in this file.
 - Repository branding renamed to `Clash 白名单规则（自用）`
 - GitHub repository renamed to `clash-whitelist-self-use`
 - Repository visibility changed from private to public
-
+- Public repository sanitized to remove real domains, private service rules, and local network specifics
