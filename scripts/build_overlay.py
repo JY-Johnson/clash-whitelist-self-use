@@ -3,6 +3,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 RULES_FILE = ROOT / "rules" / "custom-direct.txt"
+PRIVATE_RULES_FILE = ROOT / "rules" / "custom-direct.private.txt"
 DIST_FILE = ROOT / "dist" / "whitelist-overlay.yaml"
 
 PROVIDERS = [
@@ -16,11 +17,15 @@ PROVIDERS = [
 
 def load_custom_rules() -> list[str]:
     rules: list[str] = []
-    for raw_line in RULES_FILE.read_text(encoding="utf-8").splitlines():
-        line = raw_line.strip()
-        if not line or line.startswith("#"):
-            continue
-        rules.append(line)
+    rule_files = [RULES_FILE]
+    if PRIVATE_RULES_FILE.exists():
+        rule_files.append(PRIVATE_RULES_FILE)
+    for rule_file in rule_files:
+        for raw_line in rule_file.read_text(encoding="utf-8").splitlines():
+            line = raw_line.strip()
+            if not line or line.startswith("#"):
+                continue
+            rules.append(line)
     return rules
 
 
@@ -134,7 +139,7 @@ def render_rules(custom_rules: list[str]) -> str:
     return "".join(lines)
 
 
-def build(base_url: str = "https://083105.xyz/rules/loyalsoldier") -> None:
+def build(base_url: str = "https://rules.example.com/loyalsoldier") -> None:
     DIST_FILE.parent.mkdir(parents=True, exist_ok=True)
     custom_rules = load_custom_rules()
     output = [
@@ -153,4 +158,3 @@ def build(base_url: str = "https://083105.xyz/rules/loyalsoldier") -> None:
 
 if __name__ == "__main__":
     build()
-
